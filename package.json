@@ -18,6 +18,19 @@
     "pkg-ok": "pkg-ok",
     "lint": "eslint src --ext .ts"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agmoss/fnctnl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/agmoss/fnctnl/issues"
+  },
+  "homepage": "https://github.com/agmoss/fnctnl#readme",
+  "keywords": [
+    "typescript",
+    "functional",
+    "either"
+  ],
   "devDependencies": {
     "@types/jest": "^26.0.3",
     "@typescript-eslint/eslint-plugin": "^3.5.0",

@@ -1,11 +1,11 @@
-import { Either, Left, Right, isLeft, isRight, match, fold } from '../either'
+import { Either, left, right, isLeft, isRight, match, fold } from '../either'
 
 describe('Either', () => {
   const testr = (val: number): Either<string, boolean> => {
     if (val > 10) {
-      return Left('Number too high!')
+      return left('Number too high!')
     } else {
-      return Right(true)
+      return right(true)
     }
   }
 
@@ -43,5 +43,13 @@ describe('Either', () => {
       (right: boolean) => right
     )(testr(9))
     expect(val).toBeTruthy()
+  })
+
+  it('should fold left', () => {
+    const val = fold<boolean, string, boolean>(
+      (left: string) => false,
+      (right: boolean) => right
+    )(testr(11))
+    expect(val).toBeFalsy()
   })
 })
